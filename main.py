@@ -6,7 +6,7 @@ OFFLINE_PLAYLIST_NAME = "Liked Songs Manager"
 N_SONGS = 50
 
 scope = "user-library-modify playlist-modify-private user-library-read playlist-modify-public playlist-read-private playlist-read-collaborative"
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=cred.client_id, client_secret= cred.client_secret, redirect_uri=cred.redirect_uri, scope=scope))
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=cred.client_id, client_secret= cred.client_secret, redirect_uri=cred.redirect_uri, scope=scope, open_browser=False))
 
 def create_playlist(playlist_name):
     playlists = sp.current_user_playlists()['items']
